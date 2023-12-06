@@ -1,11 +1,5 @@
+<app-nav></app-nav>
 
-<div class="container" style="margin-top: 10px;">
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
-<!--  -->
-<!-- snipet ul หรือ ul.xxx เมื่อ xxx คือชื่อ class ที่ต้อง -->
-<ul>
-    <li *ngfor="let user of users">
-        {{user.id}} : {{user.userName}}
-        <!-- api server ส่งข้อมูลมาเป็น json และ json name convention กำหนดเป็น  camelCased -->
-    </li>
-</ul>
