@@ -33,11 +33,11 @@ export class NavComponent implements OnInit{
 }
 
   login(): void {
-    this.accountService.login(this.model).subscribe({ //Observable
+    this.accountService.login(this.model).subscribe({
       next: () => {
-        this.router.navigateByUrl('/members') // console.log(response)
+        this.router.navigateByUrl('/members')
       },
-      error: err => this.toastr.error(err.error) //anything that's not in 200 range of HTTP status
+      // error: err => this.toastr.error(err.error)
     })
   }
 
