@@ -13,7 +13,7 @@ import { Toast, ToastrService } from 'ngx-toastr'
 
 export class NavComponent implements OnInit{
   model: any = {}
-  user: User | null = {username: "", token: ""}
+  user: User | null = null
   currentUser$: Observable<User | null> = of(null) // isLogin = false
 
   constructor(private toastr: ToastrService, private router: Router, private accountService: AccountService) {}

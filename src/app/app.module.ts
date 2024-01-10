@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
@@ -21,7 +21,9 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { MemberCardComponent } from './members/member-card/member-card.component'
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { MemberProfileComponent } from './members/member-profile/member-profile.component'
-import { LoadingInterceptor } from './_interceptors/loading.interceptor'
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component'
 
 @NgModule({
   declarations: [
@@ -38,12 +40,15 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor'
     ServerErrorComponent,
     MemberCardComponent,
     MemberProfileComponent,
+    PhotoEditorComponent,
+    TextInputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     SharedModule,
     BrowserAnimationsModule
