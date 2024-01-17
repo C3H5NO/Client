@@ -5,6 +5,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FileUploadModule } from 'ng2-file-upload';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 
@@ -12,18 +14,22 @@ import { FileUploadModule } from 'ng2-file-upload';
   declarations: [],
   imports: [
     CommonModule,
+    PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ToastrModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'square-spin' }),
     FileUploadModule,
   ],
   exports: [
+    PaginationModule,
     BsDropdownModule,
     ToastrModule,
     TabsModule,
     NgxSpinnerModule,
     FileUploadModule,
+    BsDatepickerModule,
   ]
 })
 export class SharedModule { }
