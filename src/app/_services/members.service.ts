@@ -9,6 +9,7 @@ import { UserParams } from '../_models/UserParams';
 import { AccountService } from './account.service';
 import { ListParams } from '../_models/listParam';
 import { getPaginationHeaders, getPaginationResult } from './PaginationHelper';
+import { Message } from '../_models/Message';
 
 @Injectable({
   providedIn: 'root'
@@ -132,6 +133,12 @@ export class MembersService {
     // params = params.append('predicate', predicate)
     const url = this.baseUrl + 'likes'
     return getPaginationResult<Member[]>(url, httpParams, this.http)
+  }
+
+  sendMessage(recipientUsername: string, content: string) {
+    const url = this.baseUrl + 'messages'
+    const body = { recipientUsername, content } //ต้องสะกดตรงกับ CreateMessageDto.cs
+    return this.http.post<Message>(url, body)
   }
 
 }

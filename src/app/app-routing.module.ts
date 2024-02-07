@@ -11,6 +11,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberProfileComponent } from './members/member-profile/member-profile.component';
 import { preventUnsavedChangesGuard } from './_guard/prevent-unsaved-changes.guard';
+import { memberDetailResolver } from './_resolvers/member-detail.resolver';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'members', component: MemberListComponent},
     { path: 'members/:id', component: MemberDetailComponent },
     { path: 'lists', component: ListsComponent },
+    { path: 'members/name/:username', component: MemberDetailComponent,resolve:{member:memberDetailResolver} },
     { path: 'messages', component: MessagesComponent },
     { path: 'members/name/:username', component: MemberDetailComponent },
     { path: 'member/profile', component: MemberProfileComponent, canDeactivate: [preventUnsavedChangesGuard]},
