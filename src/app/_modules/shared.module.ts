@@ -9,6 +9,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TimeagoModule } from "ngx-timeago";
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,9 @@ import { TimeagoModule } from "ngx-timeago";
     BsDatepickerModule.forRoot(),
     ButtonsModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'square-spin' }),
+    ModalModule.forRoot(),
   ],
+
   exports: [
     TimeagoModule,
     PaginationModule,
@@ -34,6 +37,8 @@ import { TimeagoModule } from "ngx-timeago";
     FileUploadModule,
     BsDatepickerModule,
     ButtonsModule,
+    ModalModule,
   ]
 })
+
 export class SharedModule { }
