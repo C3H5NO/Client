@@ -56,9 +56,9 @@ export class MessageService {
     // const body = { recipientUsername, content } //ต้องสะกดตรงกับ CreateMessageDto.cs
     // return this.http.post<Message>(url, body)
 
-    return this._hubConnection?.invoke('SendMessage', { //invoke เรียกใช้ method 'SendMessage' ใน MessageHub.cs
+    return this._hubConnection?.invoke('SendMessage', {
       recipientUsername, content
-    }).catch(error => console.log(error))
+    }).catch((error) => console.log(error))
   }
 
   getMessagesThread(username: string) {
